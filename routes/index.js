@@ -8,6 +8,10 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/latest', (req,res)=>{
+    //Get the last 10 queries and sort on date in descending order
+    History.find({}, 'term when -_id').sort('-when').limit(10).then(results=>{
+        res.json(results);
+    });
 });
 
 router.get('/api/search/:q', (req,res)=>{
