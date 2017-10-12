@@ -3,9 +3,7 @@ const router = express.Router();
 const imgur = require('../services/imgur');
 const History = require('../models/history');
 
-router.get('/', (req,res)=>{
-    res.send('hello');
-})
+router.use(express.static('public'));
 
 router.get('/latest', (req,res)=>{
     //Get the last 10 queries and sort on date in descending order
