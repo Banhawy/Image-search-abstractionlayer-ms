@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/Banhawy/url-shortner-microservice.git"
   },
+  "engines": {
+    "node": "6.2.0"
+  },
   "dependencies": {
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
