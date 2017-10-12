@@ -8,3 +8,7 @@ const historySchema = new mongoose.Schema({
         default: Date.now
      }
 });
+// Create a collection called History with historySchema
+const History = mongoose.model('History', historySchema);
+
+module.exports = History;
