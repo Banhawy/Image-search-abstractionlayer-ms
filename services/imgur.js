@@ -8,9 +8,8 @@ exports.getImage = (search, page=1)=>{
             headers: { Authorization: 'Client-ID e93205215d1114e' },
             json: true,
         };
-        getPics((err, res, body) => {
-            if (err) throw err;
-            if (res.statusCode == 200){
+        function getPics (err, res, body) {
+            if (!err && res.statusCode == 200){
                 // Filter out albums from body
                 body = body.data.filter(image=> {
                     if(!image.is_album) return image;
@@ -21,8 +20,10 @@ exports.getImage = (search, page=1)=>{
                         context: `https://imgur.com/${image.id}`
                     };
                 });
-                resolve(body);
+                success(body);
             };
-        })
+        }
+        // Actual API call
+        request(options, getPics);
     });
 }
