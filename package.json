@@ -13,10 +13,14 @@
   },
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
     "ejs": "2.5.6",
     "express": "^4.16.1",
     "mongodb": "^2.2.31",
-    "nodemon": "^1.12.1"
+    "mongoose": "^4.12.1",
+    "nodemon": "^1.12.1",
+    "request": "^2.83.0",
+    "requests": "^0.2.2"
   },
   "author": "Adham El Banhawy",
   "license": "ISC",
